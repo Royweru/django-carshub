@@ -11,4 +11,22 @@ class BodyType(models.Model):
     
 class Model(models.Model):
      name= models.CharField(max_length=100)
+     make = models.ForeignKey(Make,on_delete = models.SET_NULL, null = True)
+class Car(models.Model):
+    make = models.ForeignKey(Make,on_delete=models.SET_NULL,null=True)
+    body = models.ForeignKey(BodyType,on_delete= models.SET_NULL,null=True)
+    model = models.ForeignKey(Model,on_delete=models.SET_NULL, null = True)
+    price = models.IntegerField()
+    locationValue = models.CharField(max_length = 2400)
+    yearOfManufacture= models.CharField()
+    isFeatured= models.BooleanField()
+    isAvailable = models.BooleanField()
+    transmission = models.CharField(max_length=50)
+    horsePower = models.IntegerField()
+    acceleration = models.DecimalField()
+    fuelType = models.CharField(max_length=50)
     
+    
+class Image(models.Model):
+    picture = models.ImageField( upload_to='media/images/cars', height_field=None, width_field=None, max_length=None)
+    car = models.ForeignKey(Car,on_delete=models.CASCADE)
