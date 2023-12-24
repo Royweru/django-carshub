@@ -8,5 +8,5 @@ class CarAdmin(admin.ModelAdmin):
 admin.site.register(Model)
 admin.site.register(Make)
 admin.site.register(BodyType)
-admin.site.register(Car)
+admin.site.register(Car,CarAdmin)
 admin.site.register(Image)
