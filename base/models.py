@@ -18,12 +18,12 @@ class Car(models.Model):
     model = models.ForeignKey(Model,on_delete=models.SET_NULL, null = True)
     price = models.IntegerField()
     locationValue = models.CharField(max_length = 2400)
-    yearOfManufacture= models.CharField()
+    yearOfManufacture= models.CharField(max_length=20)
     isFeatured= models.BooleanField()
     isAvailable = models.BooleanField()
     transmission = models.CharField(max_length=50)
     horsePower = models.IntegerField()
-    acceleration = models.DecimalField()
+    acceleration = models.DecimalField(max_digits=5,decimal_places=2)
     fuelType = models.CharField(max_length=50)
     
     
