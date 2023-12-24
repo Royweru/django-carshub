@@ -18,7 +18,7 @@ class Car(models.Model):
     model = models.ForeignKey(Model,on_delete=models.SET_NULL, null = True)
     mileage= models.IntegerField()
     engineSize = models.IntegerField()
-    drive = models.CharField(max_length=50)
+    drive = models.CharField(max_length=50,default="2WD")
     price = models.IntegerField()
     locationValue = models.CharField(max_length = 2400)
     yearOfManufacture= models.CharField(max_length=20)
